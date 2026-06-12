@@ -14,7 +14,7 @@ export function setCache<T>(key: string, data: T): void {
         };
         localStorage.setItem(key, JSON.stringify(entry));
     } catch {
-
+        console.warn('No se pudo guardar en cache');
     }
 }
 
