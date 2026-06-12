@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 1rem;
+}
+
+.header__logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  margin-right: auto;
+}
+
+.header__breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.header__breadcrumbs a {
+  color: #555;
+  text-decoration: none;
+}
+
+.header__breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.header__breadcrumbs-separator {
+  color: #999;
+}
+
+.header__cart {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.header__cart-count {
+  font-weight: bold;
+  font-size: 0.95rem;
+}

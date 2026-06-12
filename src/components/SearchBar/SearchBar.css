@@ -1,0 +1,17 @@
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-bar__input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 250px;
+  outline: none;
+}
+
+.search-bar__input:focus {
+  border-color: #999;
+}
