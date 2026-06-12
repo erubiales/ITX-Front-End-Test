@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
 import './Header.css';
@@ -26,7 +25,7 @@ function Header() {
       </nav>
 
       <div className="header__cart">
-        <span className="header__cart-icon">🛒</span>
+        <span className="header__cart-icon">Cart</span>
         <span className="header__cart-count">{cartCount}</span>
       </div>
     </header>

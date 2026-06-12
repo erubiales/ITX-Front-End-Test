@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #111;
+  border-bottom: 1px solid #222;
   gap: 1rem;
 }
 
@@ -11,7 +11,7 @@
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   margin-right: auto;
 }
 
@@ -23,16 +23,21 @@
 }
 
 .header__breadcrumbs a {
-  color: #555;
+  color: #aaa;
   text-decoration: none;
 }
 
 .header__breadcrumbs a:hover {
-  text-decoration: underline;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header__breadcrumbs span {
+  color: #aaa;
 }
 
 .header__breadcrumbs-separator {
-  color: #999;
+  color: #555;
 }
 
 .header__cart {
@@ -40,9 +45,11 @@
   align-items: center;
   gap: 0.25rem;
   margin-left: auto;
+  color: #fff;
 }
 
 .header__cart-count {
   font-weight: bold;
   font-size: 0.95rem;
+  color: #fff;
 }
