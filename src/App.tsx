@@ -1,27 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import SplashScreen from './components/SplashScreen/SplashScreen';
+import PLP from './pages/PLP';
+import PDP from './pages/PDP';
 import './App.css';
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  if (showSplash) {
+    return <SplashScreen onComplete={() => setShowSplash(false)} />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          
-        </a>
-        Hello world
-      </header>
-    </div>
+    <BrowserRouter>
+      <CartProvider>
+        <Routes>
+          <Route path="/" element={<PLP />} />
+          <Route path="/product/:id" element={<PDP />} />
+        </Routes>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 
