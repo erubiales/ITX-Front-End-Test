@@ -16,9 +16,12 @@ function useCart() {
     setLoading(true);
     setError(null);
     try {
-      const response = await addToCart(item);
-      setCartCount(response.count);
-      localStorage.setItem(CART_COUNT_KEY, response.count.toString());
+      await addToCart(item);
+      setCartCount(prev => {
+        const newCount = prev + 1;
+        localStorage.setItem(CART_COUNT_KEY, newCount.toString());
+        return newCount;
+      });
     } catch {
       setError('Error al añadir al carrito');
     } finally {
