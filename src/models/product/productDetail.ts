@@ -7,8 +7,8 @@ export interface ProductDetail extends Product{
     os: string;
     displayResolution: string;
     battery: string;
-    primaryCamera: string[];
-    secondaryCmera: string[];
+    primaryCamera: string | string[];
+    secondaryCmera: string | string[];
     dimentions: string;
     weight: string;
     options: ProductOptions;
