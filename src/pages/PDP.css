@@ -1,0 +1,25 @@
+.pdp {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.pdp__content {
+  padding: 1.5rem 2rem;
+}
+
+.pdp__back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.pdp__back:hover {
+  text-decoration: underline;
+}
+
+.pdp__status {
+  text-align: center;
+  padding: 2rem;
+}
