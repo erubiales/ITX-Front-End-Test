@@ -53,6 +53,12 @@ Modo Build para producción, gestión automática del API URL con archivos ENV
 npm run build
 ```
 
+Para ejecutar el build
+```bash
+npx serve -s build
+```
+En la consola indicará a que URL necesitas acceder
+
 Modo test, forzado en script para testear todos los archivos, testea las siguientes funcionalidades
 
 ```bash
