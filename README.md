@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# ITX Front-End Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mini aplicación SPA para comprar dispositivos móviles, desarrollada con React y TypeScript.
+Basado en la prueba de Front para ITX
 
-## Available Scripts
 
-In the project directory, you can run:
+## Stack tecnológico
 
-### `npm start`
+- React 19 + TypeScript
+- React Router DOM v6
+- Framer Motion para animaciones
+- CSS puro (sin frameworks)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Requisitos previos
 
-### `npm test`
+- Node.js >= 16
+- npm >= 8
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Clonar repositorio
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+## Funcionamiento
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Levantar el Backend accediendo a https://itx-frontend-test.onrender.com/api/product
+Está alojado en Render por lo que tarda en iniciar unos 30 segundos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Las variables de entorno se gestionan mediante archivos `.env` y `.env.production`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Iniciar React, se abrirá una ventana de navegador en modo desarrollo
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Scripts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Modo desarrollo:
+```bash
+npm start
+```
+
+Modo Build para producción, gestión automática del API URL con archivos ENV
+```bash
+npm run build
+```
+
+Modo test, forzado en script para testear todos los archivos, testea las siguientes funcionalidades
+
+```bash
+npm test
+```
+
+| Archivo | Componente/Servicio | Funcionalidades testeadas |
+|---------|-------------------|--------------------------|
+| `cacheService.test.ts` | cacheService | Guardado en localStorage, recuperación de datos válidos, expiración a 1h, limpieza de entradas expiradas |
+| `useProducts.test.ts` | useProducts | Listado completo, filtrado por marca, filtrado por modelo, filtrado case-insensitive, manejo de error |
+| `useCart.test.ts` | useCart | Inicialización del contador, recuperación desde localStorage, incremento al añadir, persistencia, manejo de error |
+| `Header.test.tsx` | Header | Renderizado del título, contador del carrito, breadcrumb en ruta principal, breadcrumb en detalle |
+| `ProductCard.test.tsx` | ProductCard | Renderizado de marca, modelo y precio, evento onClick con id correcto |
+
+
+Lint CHECK de codigo
+```bash
+npm run lint
+```
+
+## Arquitectura
+
+- `src/models/` — Estructura de datos
+- `src/services/` — API y gestión de cache
+- `src/hooks/` — Logica de negocio compartida
+- `src/components/` — Componentes de paginas
+- `src/pages/` — Paginas PLP y PDP
+- `src/context/` — Contexto global
+
+
+## Observaciones
+
+- Los datos en cache se guardan en `localStorage` durante 1 hora para evitar peticiones innecesarias a la API
+- El servidor de la API está en Render y puede tardar hasta 30 segundos en responder la primera vez por cold start
+- El contador del carrito se persiste en `localStorage` entre sesiones
