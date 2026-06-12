@@ -11,11 +11,13 @@
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
+/* HOVER para resaltar producto */
 .product-card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
+/* Imagen ajustada para la tarjeta */
 .product-card img {
   width: 65%;
   aspect-ratio: 1;
@@ -23,6 +25,7 @@
   margin-bottom: 0.5rem;
 }
 
+/* Info del producto a la derecha */
 .product-card__info {
   display: flex;
   flex-direction: column;
@@ -33,6 +36,7 @@
   padding-top: 0.75rem;
 }
 
+/* Uppercase para mejor gestion visual */
 .product-card__brand {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -47,6 +51,7 @@
   text-align: center;
 }
 
+/* Destacamos el precio como principal */
 .product-card__price {
   font-size: 1.7rem;
   font-weight: 800;

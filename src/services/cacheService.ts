@@ -1,3 +1,5 @@
+// Exigido en la prueba, cache expira en 1 hora, se hace la conversion multiplicando
+// para evitar numeros enormes
 const CACHE_EXPIRATION_TIME = 60 * 60 * 1000;
 
 
@@ -14,7 +16,7 @@ export function setCache<T>(key: string, data: T): void {
         };
         localStorage.setItem(key, JSON.stringify(entry));
     } catch {
-        console.warn('No se pudo guardar en cache');
+        console.warn('CACHE: No se pudo guardar en cache');
     }
 }
 
@@ -32,6 +34,7 @@ export function getCache<T>(key: string): T | null {
         localStorage.removeItem(key);
         return null;
     } catch {
+        console.warn('CACHE: Error al obtener de cache');
         return null;
     }
 }

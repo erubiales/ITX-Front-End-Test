@@ -1,3 +1,4 @@
+/* Alineacion de Searchbar */
 .product-list__toolbar {
   display: flex;
   justify-content: flex-end;
@@ -10,6 +11,7 @@
   gap: 1rem;
 }
 
+/* Estado de carga centrado */
 .product-list__status {
   text-align: center;
   padding: 2rem;
@@ -19,6 +21,7 @@
   gap: 1rem;
 }
 
+/* Spinner basico */
 .product-list__spinner {
   width: 40px;
   height: 40px;
@@ -28,6 +31,7 @@
   animation: spin 0.8s linear infinite;
 }
 
+/* Mensaje que aparece a los 8 segundos si el servidor tarda (Render puede tardar en levantarse) */
 .product-list__status-hint {
   color: #888;
   font-size: 0.85rem;
@@ -38,6 +42,7 @@
   to { transform: rotate(360deg); }
 }
 
+/* Gestion de pantallas, la web se adapta a dispositivos moviles */
 @media (max-width: 1024px) {
   .product-list__grid { grid-template-columns: repeat(3, 1fr); }
 }

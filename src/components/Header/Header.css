@@ -1,3 +1,4 @@
+/* Hader con contraste oscuro */
 .header {
   display: flex;
   align-items: center;
@@ -7,6 +8,7 @@
   gap: 1rem;
 }
 
+/* El logo maneja el espacio en el header */
 .header__logo {
   font-size: 1.25rem;
   font-weight: bold;
@@ -15,6 +17,7 @@
   margin-right: auto;
 }
 
+/* Ruta centrada entre logo y carrito */
 .header__breadcrumbs {
   display: flex;
   align-items: center;
@@ -40,6 +43,7 @@
   color: #555;
 }
 
+/* carrito a la derecha */
 .header__cart {
   display: flex;
   align-items: center;

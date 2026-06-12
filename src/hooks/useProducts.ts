@@ -17,13 +17,14 @@ function useProducts(searchTerm: string) {
         const data = await getProducts();
         setState({ data, loading: false, error: null });
       } catch {
-        setState(prev => ({ ...prev, loading: false, error: 'Error al cargar los productos' }));
+        setState(prev => ({ ...prev, loading: false, error: 'PRODUCTO: Error al cargar los productos' }));
       }
     };
 
     fetchProducts();
   }, []);
 
+  // Se filtra en memoria para no llamar a la api
   const filteredProducts = state.data.filter(p =>
     p.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
     p.model.toLowerCase().includes(searchTerm.toLowerCase())

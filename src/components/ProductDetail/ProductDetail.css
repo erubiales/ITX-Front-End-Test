@@ -5,6 +5,7 @@
   padding: 1rem;
 }
 
+/* Imagen centrada */
 .product-detail__image {
   display: flex;
   align-items: flex-start;
@@ -17,6 +18,7 @@
   object-fit: contain;
 }
 
+/* Lado de informacion, datos arriba y acciones abajo */
 .product-detail__info {
   display: flex;
   flex-direction: column;
@@ -37,12 +39,14 @@
   gap: 0.5rem;
 }
 
+/* Separacion entre atributos */
 .product-detail__description li {
   font-size: 0.95rem;
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 0.5rem;
 }
 
+/* Apilacion de las columnas en movil */
 @media (max-width: 768px) {
   .product-detail {
     grid-template-columns: 1fr;

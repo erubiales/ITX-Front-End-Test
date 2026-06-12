@@ -3,6 +3,8 @@ export const environment = {
     apiUrl: process.env.REACT_APP_API_URL || 'https://itx-frontend-test.onrender.com/',
     apiTimeout: Number(process.env.REACT_APP_API_TIMEOUT) || 5000,
 
+
+    //ENDPOINTS API
     products: 'api/product',
     productDetail: 'api/product/',
 

@@ -19,7 +19,7 @@ function useProductDetail(id: string) {
         const data = await getProductById(id);
         setState({ data, loading: false, error: null });
       } catch {
-        setState(prev => ({ ...prev, loading: false, error: 'Error al cargar el producto' }));
+        setState(prev => ({ ...prev, loading: false, error: 'PRODUCTO: Error al cargar el producto' }));
       }
     };
 
