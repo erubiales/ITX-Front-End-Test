@@ -44,7 +44,7 @@ function ProductDetail({ product }: ProductDetailProps) {
           <h2>{product.brand} {product.model}</h2>
           <ul>
             {[
-              ['Precio', `${product.price} €`],
+              ['Precio', product.price ? `${product.price} €` : 'Sin precio'],
               ['CPU', product.cpu],
               ['RAM', product.ram],
               ['Sistema Operativo', product.os],

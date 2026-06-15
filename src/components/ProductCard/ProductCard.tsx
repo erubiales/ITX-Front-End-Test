@@ -21,7 +21,7 @@ function ProductCard({ product, onClick }: ProductCardProps) {
       <div className="product-card__info">
         <span className="product-card__brand">{product.brand}</span>
         <span className="product-card__model">{product.model}</span>
-        <span className="product-card__price">{product.price} €</span>
+        <span className="product-card__price">{product.price ? `${product.price} €` : 'Sin precio'}</span>
       </div>
     </motion.div>
   );
